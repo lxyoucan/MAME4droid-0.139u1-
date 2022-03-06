@@ -101,9 +101,9 @@ public class DialogHelper {
 	    switch(id) {
 	    case DIALOG_FINISH_CUSTOM_LAYOUT:
 	    	
-	    	builder.setMessage("Do you want to save changes?")
+	    	builder.setMessage("是否保存更改?")
 	    	       .setCancelable(false)
-	    	       .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+	    	       .setPositiveButton("是", new DialogInterface.OnClickListener() {
 	    	           public void onClick(DialogInterface dialog, int id) {
 	    	        	   DialogHelper.savedDialog = DIALOG_NONE;  
 	    	        	   mm.removeDialog(DIALOG_FINISH_CUSTOM_LAYOUT);
@@ -115,7 +115,7 @@ public class DialogHelper {
 	    				   mm.getInputView().invalidate();	    				   
 	    	           }
 	    	       })
-	    	       .setNegativeButton("No", new DialogInterface.OnClickListener() {
+	    	       .setNegativeButton("否", new DialogInterface.OnClickListener() {
 	    	           public void onClick(DialogInterface dialog, int id) {
 	    	        	   DialogHelper.savedDialog = DIALOG_NONE;  
 	    	        	   mm.removeDialog(DIALOG_FINISH_CUSTOM_LAYOUT);
@@ -131,9 +131,9 @@ public class DialogHelper {
 	        break;       
 	    case DIALOG_ROMs_DIR:
 	    	
-	    	builder.setMessage("Do you want to use default ROMs path? (recomended)")
+	    	builder.setMessage("您想使用默认 ROM 路径吗？ （推荐的）")
 	    	       .setCancelable(false)
-	    	       .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+	    	       .setPositiveButton("是", new DialogInterface.OnClickListener() {
 	    	           public void onClick(DialogInterface dialog, int id) {
 	    	        	   DialogHelper.savedDialog = DIALOG_NONE;
 	    	        	   mm.removeDialog(DIALOG_ROMs_DIR);
@@ -145,7 +145,7 @@ public class DialogHelper {
 	    	        	   }	    	        	   
 	    	           }
 	    	       })
-	    	       .setNegativeButton("No", new DialogInterface.OnClickListener() {
+	    	       .setNegativeButton("否", new DialogInterface.OnClickListener() {
 	    	           public void onClick(DialogInterface dialog, int id) {
 	    	        	   DialogHelper.savedDialog = DIALOG_NONE;	    	        	   
 	    	        	   mm.removeDialog(DIALOG_ROMs_DIR);
@@ -190,9 +190,9 @@ public class DialogHelper {
 			break;
 	    case DIALOG_EXIT:
 	    	
-	    	builder.setMessage("Are you sure you want to exit?")
+	    	builder.setMessage("你确定要退出吗？")
 	    	       .setCancelable(false)
-	    	       .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+	    	       .setPositiveButton("是", new DialogInterface.OnClickListener() {
 	    	           public void onClick(DialogInterface dialog, int id) {
 	    	                //System.exit(0);
 						   if(android.os.Build.VERSION.SDK_INT >= 21) {
@@ -203,7 +203,7 @@ public class DialogHelper {
 						   android.os.Process.killProcess(android.os.Process.myPid());
 	    	           }
 	    	       })
-	    	       .setNegativeButton("No", new DialogInterface.OnClickListener() {
+	    	       .setNegativeButton("否", new DialogInterface.OnClickListener() {
 	    	           public void onClick(DialogInterface dialog, int id) {
 	    	        	     Emulator.resume();
 	    	        	     DialogHelper.savedDialog = DIALOG_NONE;
@@ -242,9 +242,9 @@ public class DialogHelper {
 	    	 dialog = builder.create();
 	         break;
 	    case DIALOG_EXIT_GAME:	    	
-	    	builder.setMessage("Are you sure you want to exit game?")
+	    	builder.setMessage("确定要退出游戏吗？")
 	    	       .setCancelable(false)
-	    	       .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+	    	       .setPositiveButton("是", new DialogInterface.OnClickListener() {
 	    	           public void onClick(DialogInterface dialog, int id) {
 	    	                DialogHelper.savedDialog = DIALOG_NONE;
 	    	                Emulator.resume();
@@ -258,7 +258,7 @@ public class DialogHelper {
 	    					mm.removeDialog(DIALOG_EXIT_GAME);
 	    	           }
 	    	       })
-	    	       .setNegativeButton("No", new DialogInterface.OnClickListener() {
+	    	       .setNegativeButton("否", new DialogInterface.OnClickListener() {
 	    	           public void onClick(DialogInterface dialog, int id) {
 	    	        	   Emulator.resume();
 	    	        	   DialogHelper.savedDialog = DIALOG_NONE;
@@ -278,7 +278,7 @@ public class DialogHelper {
 	    	final int b = Emulator.isInMAME() ? 0 : 2;
 	    	
 	    	if(a == 1)
-	    	   builder.setTitle("MAME汉化：B站ITKEY");
+	    	   builder.setTitle("B站ITKEY汉化");
 	    	
 	    	builder.setCancelable(true);
 	    	builder.setItems(Emulator.isInMAME() ? (id==DIALOG_OPTIONS?items1:items3) : (id==DIALOG_OPTIONS?items2:items4), new DialogInterface.OnClickListener() {
@@ -327,8 +327,8 @@ public class DialogHelper {
 	    	dialog = builder.create();
 	        break;
 	    case DIALOG_EMU_RESTART: 	
-	    	builder.setTitle("Restart needed!")
-	    	       .setMessage("MAME4droid needs to restart for the changes to take effect.")
+	    	builder.setTitle("需要重启!")
+	    	       .setMessage("MAME4droid 需要重新启动才能使更改生效。")
 	    	       .setCancelable(false)
 	    	       .setPositiveButton("Dismiss", new DialogInterface.OnClickListener() {
 	    	           public void onClick(DialogInterface dialog, int id) {
@@ -338,8 +338,8 @@ public class DialogHelper {
 	    	dialog = builder.create();
 	        break;	        
 	    case DIALOG_NO_PERMISSIONS: 	
-	    	builder.setTitle("No permissions!")
-	    	       .setMessage("You don't have permission to read from external storage. Please, allow storage permission on Android applications settings.")
+	    	builder.setTitle("没有权限！")
+	    	       .setMessage("您无权从外部存储中读取。 请允许 Android 应用程序设置的存储权限。")
 	    	       .setCancelable(false)
 	    	       .setPositiveButton("Dismiss", new DialogInterface.OnClickListener() {
 	    	           public void onClick(DialogInterface dialog, int id) {

@@ -76,7 +76,7 @@ public class ListPrefWithWarn extends ListPreference {
 		}
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(context);
-		builder.setMessage("Are you sure? (app restart needed)")
+		builder.setMessage("确定吗? (app需要重启)")
 				.setCancelable(false)
 				.setPositiveButton("Yes",
 						new DialogInterface.OnClickListener() {
