@@ -269,16 +269,16 @@ public class DialogHelper {
 	        break;
 	    case DIALOG_OPTIONS:
 	    case DIALOG_FULLSCREEN:	
-	    	final CharSequence[] items1 = {"Load State", "Save State","Help","Settings", "Netplay" /*"Support",*/};	    	
-	    	final CharSequence[] items2 = {"Help","Settings", "Netplay"/*"Support"*/};	
-	    	final CharSequence[] items3 = {"Exit","Load State", "Save State","Help","Settings", "Netplay"/*"Support",*/};	    	
-	    	final CharSequence[] items4 = {"Exit","Help","Settings", "Netplay" /*"Support"*/};	
+	    	final CharSequence[] items1 = {"载入进度", "保存进度","帮助","设置", "联网" /*"Support",*/};
+	    	final CharSequence[] items2 = {"帮助","设置", "联网"/*"Support"*/};
+	    	final CharSequence[] items3 = {"退出","载入进度", "保存进度","帮助","设置", "联网"/*"Support",*/};
+	    	final CharSequence[] items4 = {"退出","帮助","设置", "联网" /*"Support"*/};
 	    	
 	    	final int a = id == DIALOG_FULLSCREEN ? 0 : 1;
 	    	final int b = Emulator.isInMAME() ? 0 : 2;
 	    	
 	    	if(a == 1)
-	    	   builder.setTitle("Choose an option from the menu.");
+	    	   builder.setTitle("MAME汉化：B站ITKEY");
 	    	
 	    	builder.setCancelable(true);
 	    	builder.setItems(Emulator.isInMAME() ? (id==DIALOG_OPTIONS?items1:items3) : (id==DIALOG_OPTIONS?items2:items4), new DialogInterface.OnClickListener() {
