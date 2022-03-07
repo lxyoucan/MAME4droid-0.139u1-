@@ -142,11 +142,9 @@
 				android:key="PREF_GLOBAL_CHEAT"
 				android:summary="启用作弊数据库的读取"
 				android:title="秘籍" />
-			<!--
-	   	<CheckBoxPreference android:key="PREF_GLOBAL_AUTOSAVE"
-			android:title="Autosave" android:summary="When enabled, automatically creates a save state file when exiting a game."
-			android:defaultValue="false" />
-	-->
+			<CheckBoxPreference android:key="PREF_GLOBAL_AUTOSAVE"
+				android:title="自动保存进度" android:summary="启用后，退出游戏时自动创建保存状态文件。"
+				android:defaultValue="false" />
 
 			<CheckBoxPreference
 				android:defaultValue="true"
