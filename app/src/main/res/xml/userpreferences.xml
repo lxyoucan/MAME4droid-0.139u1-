@@ -512,17 +512,16 @@
 				android:key="PREF_RENDER_RGB"
 				android:summary="以牺牲性能为代价以真彩色渲染"
 				android:title="真正的 RGB" />
-			<!--
-	    <CheckBoxPreference android:key="PREF_GLOBAL_SUSPEND_NOTIFICATION"
-			android:title="Notification icon" android:summary="Enable it to show a notification icon when MAME4droid is suspended"
+	    	<CheckBoxPreference android:key="PREF_GLOBAL_SUSPEND_NOTIFICATION"
+			android:title="通知图标" android:summary="启用它以在 MAME4droid 暂停时显示通知图标"
 			android:defaultValue="false" />
-	    -->
-			<!-- <ListPreference
+
+			<ListPreference
 			android:entries="@array/pref_overlay_intensity_options"
-			android:title='Effect overlay intensity'			
+			android:title='效果叠加强度'
 			android:key="PREF_OVERLAY_INTENSITY"
 			android:entryValues="@array/pref_overlay_intensity_values"
-			android:defaultValue="2" />-->
+			android:defaultValue="2" />
 
 			<com.seleuco.mame4droid.prefs.ListPrefWithWarn
 				android:defaultValue="1"

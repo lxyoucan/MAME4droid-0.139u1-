@@ -1,197 +1,195 @@
-<!DOCTYPE html> 
+<html class="translated-ltr"><head>
+    <title>MAME4Droid 重新加载帮助</title>
 
-<html>
-<head>
-<title>MAME4Droid Reloaded Help</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="mystyle.css">
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="mystyle.css">
-	
-</head>
-<body class="view"> 
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="https://translate.googleapis.com/translate_static/css/translateelement.css"></head>
+<body class="view">
 <div class="page">
-	<div class="header">
-<h1 class="title">Settings</h1>
-  </div><!-- /header -->
-	<div class="content">
-      <h3>Game Filter</h3>
-      <ul>
-        <li><strong>Show Only Favorites: </strong>Show only favorites games in ROM manager. To set a game as a favorite, highlight the game and hit the A button (you can also delete files this way). The favorites are saved to the file: Favorites.ini. This file is compatible with the standard MAME Favorites.ini file format so you can copy this over from your PC version of MAME.        </li>
-        <li><strong>Keyword: </strong>Enter a keyword to filter the games on (i.e. Mario)</li>
-        <li><strong>Hide Clones: </strong>Hides the clones and shows only the original set. For example, Shao-Lin's Road is a clone of Kicker. This option would hide Shao-Lin's Road and show only Kicker.</li>
-        <li><strong>Hide Not Working:</strong> Hides games that MAME reports as not working.</li>
-        <li><strong>Year &gt;=:</strong> Show only games released on this year or later.</li>
-        <li><strong>Year &lt;=: </strong>Show only games released on this year or earlier.</li>
-        <li><strong>Manufacturer:</strong> Show only games released by the given manufacturer.</li>
-        <li><strong>Driver Source:</strong> Many games share a similar driver. This will show only the given driver. For example, <em>williams</em> would show Robotron, Defender, Bubbles, etc.</li>
-        <li><strong>Category:</strong> Shows games that match a given category.</li>
-        <li><strong>Reset Filters to Default:</strong> Resets all filters.</li>
-      </ul>
-      <h3>Emulation</h3>
-      <ul>
-        <li><strong>Auto Switch Resolution:</strong> Auto switch resolution to original arcade resolution instead emulated resolution. This option improves performance and fits arcade aspect ratios to screen boundaries. </li>
-        <li><strong>Emulated Resolution: </strong>Force MAME internal drawing resolution, use hi-res resolution to improve artwork rendering at the expense of performance or to minimize 4:3 scaling artifacts. </li>
-        <li><strong>Refresh speed (Video sync):</strong> Lets you change the default game speed to sync with the selected refresh rate. It's useful to avoid jitter on some games or devices.</li>
-        <li><strong>Audio Sync:</strong> Enable it to get smoother gameplay and better sound in some cases. You should also disable Throttle, and set manual frame skip to 6 or 8  if needed.</li>
-        <li><strong>Emulated Speed:</strong> Changes the way MAME throttles gameplay such that the game runs at some multiplier of the original speed. It's useful to make higher demanding games playable using lower nominal speed ( ex, 80%).</li>
-        <li><strong>Throttle:</strong> Configures the default throttling setting. When throttling is on, MAME attempts to keep the game running at the game's intended speed. When throttling is off, MAME runs the game as fast as it can. Note that the fastest speed is more often than not limited by your graphics card, especially for older games.</li>
-        <li><strong>Frame Skip:</strong> Specifies the frameskip value. This is the number of frames out of every 12 to drop when running. For example, if you  select a frame skip value of 2, then MAME will display 10 out of every 12 frames. By skipping those frames, you may be able to get full speed in a game that requires more horsepower than your device has. The default value is auto frameskip that automatically determines the frameskip level while you're playing the game, adjusting it constantly in a frantic attempt to keep the game running at full speed.</li>
-        <li><strong>Sound:</strong> Enable or disable sound altogether. Also Sets the audio sample rate. Smaller values (e.g. 11025) cause lower audio quality but faster emulation speed. Higher values (e.g. 48000) cause higher audio quality but slower emulation speed.</li>
-        <li><strong>Show FPS:</strong> Toggles the display of Frames Per Second - useful for benchmarking..</li>
-        <li><strong>Show Info/Warnings:</strong> Shows Game Info and any warnings when a game is selected.</li>
-        <li><strong>Cheats: </strong>Enables use of the cheat database. If the cheat database is present, it will also enable the  Cheat menu in the MAME native user interface (press coin+start at the same time when gaming).</li>
-        <li><strong>Save battery:</strong> Allows MAME to give time back to the system (sleep) when running with throttle turned on. This allows other programs to have some CPU time, assuming that the game isn't taxing 100% of your CPU resources. This option can potentially cause hiccups in performance if other demanding programs are running.</li>
-        <li><strong>Aspect</strong>
-<ul>
-          <li><strong>MAME (original arcade):</strong> Use the original aspect ratio.</li>
-            <li><strong>Forced Pixel Aspect (and resolution):</strong> Enable it to force pixel aspect ratio bypassing MAME video selection.</li>
-            <li><strong>Forced Pixel Aspect (smart, fixed resolution):</strong> Enable it to force pixel aspect ratio bypassing MAME video selection if is better.</li></ul></li>
-        <li><strong>Forced Refresh Rate (Hz)</strong> Lets you force the default game refresh rate to sync with the device display. Beware, some games could not work if you change their default refresh rate.
-        </li>
-        <li><strong>Save Hiscores:</strong> If enabled, saves hiscores on some games not saving on NVRAM. It could cause problems with some games or save states.</li>
-        <li><strong>Custom BIOS:</strong> For NeoGeo games. Allows the use of other BIOS files such as Unibios instead of the MVS default one.</li>
-        <li><strong>Vector</strong>
-<ul>
-          <li><strong>Beam 2x: </strong>Sets the width of the vectors to 2x.</li>
-            <li><strong>Antialias: </strong>Enables antialiased line rendering for vector games.</li>
-            <li><strong>Flicker:</strong> Simulates a vector &quot;flicker&quot; effect, similar to a vector monitor that needs adjustment.</li>
-          </ul>
-        </li>
-        <li><strong>Default MAME data:</strong> Restore MAME data to default values (cfg and nvram files). Use to fix problems with no input mappings or netplay problems (use on both peers)</li>
-      </ul>
-      <h3>Input</h3>
-      <ul>
-        <li><strong>Touch Controller</strong>
-<ul>
-          <li><strong>Mode</strong> (Touch Type)
-<ul>
-              <li> <strong>Digital DPAD:</strong> The controller is a digital DPAD. Some games need it or are better suited for this kind of controller.</li>
-                <li> <strong>Digital Stick:</strong> This is the old one faked analog stick.</li>
-                <li> <strong>Analog-Digital. (Performance):</strong> The controller is a full analog stick, MAME map it to a digital stick if needed. It's painted for performance.</li>
-                <li> <strong>Analog-Digital (Pretty): </strong>The controller is a full analog stick.</li>
-              </ul>
-          </li>
-          <li><strong>Customize Layout: </strong>Select to customize landscape touch control layout. You should press 'back' when you finish.          </li>
-          <li><strong>Default Touch Layout:</strong> Restore landscape control layout to default values.</li>
-          <li><strong>Buttons Size:</strong> Select the buttons size when you are on fullscreen (landscape)</li>
-          <li><strong>Stick and DPAD Size:</strong> Select the stick  DPAD size when you are on fullscreen (landscape)</li>
-          <li><strong>Number of buttons (fullscreen):</strong> Set the number of buttons on the screen (landscape)</li>
-          <li><strong>Hide Stick:</strong> Enable to hide stick on full screen mode.</li>
-          <li><strong>Animated:</strong> Animates ON/OFF DPad/Stick. Disable to for better performance.</li>
-          <li><strong>Vibrate:</strong> Enable/Disable device vibration when buttons or dpad/stick is touched.</li>
-          <li><strong>Digital Dead Zone:</strong> Enable/Disable a deadzone on DPAD touch center. It could be better for some games. Disable if you don't like it.</li>
-          <li><strong>Analog Dead Zone:</strong> Select the deadzone amount on stick touch center.          </li>
-</ul>
-        </li>
-        <li><strong>External Controller</strong>
-          <ul>
-            <li><strong>Mode</strong>            
-              <ul>
-                <li><strong> Keyboard or IME:</strong> Select this value to use an external keyboard or devices based on keyboard IMEs like WiiController.</li>
-                <li><strong> Controller Autodetection:</strong> Plug and play detection of many USB / Bluetooth controllers. Supports multiple controllers.</li>
-                <li> <strong>Original iCade: </strong>Select this value to use iON's iCade controller. Pair via Bluetooth before selecting this option.</li>
-                <li><strong> iCP, Gametel or iCade compatible: </strong>Select this value to use an iCade compatible layout. Controller should be configured on iCade mode.</li>
-              </ul>
-            </li>
-            <li><strong>Define Keys:</strong> Let you define or map the HW keys to emulator controls. (Xperia Play and any other devices with physical keyboards users should configure their buttons or keys here). If a gamepad is auto detected, you should disable autodetection to redefine buttons. You can remap the controls for all four players here.</li>
-            <li><strong>Default Keys:</strong> Restore key mappings to default settings.</li>
-            <li><strong>Automap options:</strong> Let you define the Thumbs or L1,L2 buttons behavior when a GamePad is autodetected. Use this to change Coin and Start button mappings between multiple selections.</li>
-            <li><strong>Warn on exit:</strong> Enable this to warn when you press the Exit button on the external controller (GamePad) during game play.</li>
-            <li><strong>Disable right stick:</strong> Disable right stick when it is autodetected.</li>
-            <li><strong>Analog Dead Zone:</strong> Select the deadzone amount on external GamePad analog nubs.            </li>
-          </ul>
-        </li>
-        <li><strong>Tilt Controller</strong>
-          <ul>
-            <li><strong>Tilt sensor:</strong> Enable to use tilt sensor. This lets you use the built in gyroscope and accelerometer to simulate joystick control. Great for shooting games to add some challenge instead of using the touch screen.</li>
-            <li><strong>Tilt sensor dead zone:  </strong>Select the deadzone amount on tilt sensor.</li>
-            <li><strong>Tilt sensor sensitivity:</strong> Set tilt sensor sensitivity on x and z axis.</li>
-            <li><strong>Tilt sensor neutral vertical position: </strong>Set tilt rest position on z axis.</li>
-            <li><strong>Tilt as analog: </strong>Enable to use tilt sensor as analog device, disable to use as digital.</li>
-            <li><strong>Touch anywhere:</strong> Enable to tap anywhere on screen to fire. First finger is main fire. Second finger when first finger is pressed is alternate fire</li>
-            <li><strong>Invert X Axe</strong> - Inverts the X axis so tilt controls feel more like a control yoke (for Star Wars, etc.)</li>
-            <li><strong>Swap Z,Y axes: </strong>Enable to swap Z,Y axes. This fix vertical tilt on some devices.        </li>
-          </ul>
-        </li>
-        <li><strong>Touch lightgun</strong>: Enable to tap on touchscreen as a lightgun. First finger is main fire. Second finger when first finger is pressed is alternate 
-            <ul>
-              <li><strong>Mode</strong>
+    <div class="header">
+        <h1 class="title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">设置</font></font></h1>
+    </div><!-- /header -->
+    <div class="content">
+        <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">游戏过滤器</font></font></h3>
+        <ul>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">仅显示收藏夹：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在 ROM 管理器中仅显示收藏夹游戏。</font><font style="vertical-align: inherit;">要将游戏设置为收藏，请突出显示该游戏并点击 A 按钮（您也可以通过这种方式删除文件）。</font><font style="vertical-align: inherit;">收藏夹保存到文件：Favorites.ini。</font><font style="vertical-align: inherit;">此文件与标准 MAME Favorites.ini 文件格式兼容，因此您可以从您的 PC 版本的 MAME 中复制此文件。        </font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">关键字：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">输入关键字以过滤游戏（即马里奥）</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">隐藏克隆：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">隐藏克隆并仅显示原始集。</font><font style="vertical-align: inherit;">例如，少林道就是 Kicker 的克隆。</font><font style="vertical-align: inherit;">此选项将隐藏少林之路并仅显示踢球者。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">隐藏不工作：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">隐藏 MAME 报告为不工作的游戏。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">年份 &gt;=：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">仅显示今年或之后发布的游戏。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">年份 &lt;=：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">仅显示今年或更早发布的游戏。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">制造商：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">仅显示给定制造商发布的游戏。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">驱动程序来源：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">许多游戏共享类似的驱动程序。</font><font style="vertical-align: inherit;">这将仅显示给定的驱动程序。</font><font style="vertical-align: inherit;">例如，</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">威廉姆斯</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">会展示 Robotron、Defender、Bubbles 等。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">类别：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">显示与给定类别匹配的游戏。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">将过滤器重置为默认值：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">重置所有过滤器。</font></font></li>
+        </ul>
+        <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">仿真</font></font></h3>
+        <ul>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">自动切换分辨率：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">自动切换分辨率到原始街机分辨率，而不是模拟分辨率。</font><font style="vertical-align: inherit;">此选项可提高性能并使街机纵横比适合屏幕边界。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">模拟分辨率：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">强制 MAME 内部绘图分辨率，使用高分辨率以牺牲性能来改善艺术品渲染或最小化 4:3 缩放伪影。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">刷新速度（视频同步）：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">让您更改默认游戏速度以与选定的刷新率同步。</font><font style="vertical-align: inherit;">在某些游戏或设备上避免抖动很有用。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">音频同步：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">启用它可以在某些情况下获得更流畅的游戏和更好的声音。</font><font style="vertical-align: inherit;">您还应该禁用 Throttle，并在需要时将手动跳帧设置为 6 或 8。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">模拟速度：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">更改 MAME 限制游戏玩法的方式，使游戏以原始速度的某个倍数运行。</font><font style="vertical-align: inherit;">使用较低的标称速度（例如，80%）使要求更高的游戏可玩是很有用的。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">节流：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">配置默认节流设置。</font><font style="vertical-align: inherit;">当节流开启时，MAME 会尝试让游戏以游戏的预期速度运行。</font><font style="vertical-align: inherit;">当节流关闭时，MAME 会尽可能快地运行游戏。</font><font style="vertical-align: inherit;">请注意，最快速度通常受图形卡的限制，尤其是对于较旧的游戏。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">跳帧：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">指定跳帧值。</font><font style="vertical-align: inherit;">这是运行时每 12 个帧中丢弃的帧数。</font><font style="vertical-align: inherit;">例如，如果您选择的跳帧值为 2，则 MAME 将显示每 12 帧中的 10 帧。</font><font style="vertical-align: inherit;">通过跳过这些帧，您可能能够在需要比您的设备更多马力的游戏中获得全速。</font><font style="vertical-align: inherit;">默认值是 auto frameskip，它会在您玩游戏时自动确定 frameskip 级别，并不断调整它以保持游戏全速运行。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">声音：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">完全启用或禁用声音。</font><font style="vertical-align: inherit;">还设置音频采样率。</font><font style="vertical-align: inherit;">较小的值（例如 11025）会导致较低的音频质量，但会加快仿真速度。</font><font style="vertical-align: inherit;">较高的值（例如 48000）会导致较高的音频质量但较慢的仿真速度。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">显示 FPS：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">切换每秒帧数的显示 - 对基准测试很有用。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">显示信息/警告：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">选择游戏时显示游戏信息和任何警告。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">秘籍：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">启用作弊数据库的使用。</font><font style="vertical-align: inherit;">如果作弊数据库存在，它还将启用 MAME 原生用户界面中的作弊菜单（游戏时同时按硬币+开始）。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">节省电池：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">当油门打开时，允许 MAME 给系统时间（睡眠）。</font><font style="vertical-align: inherit;">这允许其他程序有一些 CPU 时间，假设游戏没有占用 100% 的 CPU 资源。</font><font style="vertical-align: inherit;">如果其他要求苛刻的程序正在运行，此选项可能会导致性能中断。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">方面</font></font></strong>
                 <ul>
-                  <li><strong>Auto</strong>: Light gun games will automatically be detected by MAME4droid and the Touch Lightgun will be automatically enabled.</li>
-                  <li><strong>Disabled</strong>: Touch Lightgun is disabled</li>
-                  <li><strong>Enabled: </strong>Turn on Touch Lightgun. Useful if a lightgun game fails to be detected by MAME4droid.</li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MAME（原始街机）：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用原始纵横比。</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">强制像素纵横比（和分辨率）：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">启用它以强制像素纵横比绕过 MAME 视频选择。</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">强制像素纵横比（智能、固定分辨率）：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">启用它以强制像素纵横比绕过 MAME 视频选择，如果更好的话。</font></font></li></ul></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">强制刷新率 (Hz)</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">让您强制默认游戏刷新率与设备显示同步。</font><font style="vertical-align: inherit;">请注意，如果您更改默认刷新率，某些游戏将无法运行。
+            </font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">保存 Hiscores：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果启用，则将 hiscores 保存在某些未保存在 NVRAM 上的游戏中。</font><font style="vertical-align: inherit;">它可能会导致某些游戏或保存状态出现问题。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">自定义 BIOS：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">适用于 NeoGeo 游戏。</font><font style="vertical-align: inherit;">允许使用其他 BIOS 文件，例如 Unibios，而不是 MVS 默认文件。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">向量</font></font></strong>
+                <ul>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Beam 2x：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">将矢量的宽度设置为 2x。</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Antialias：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">为矢量游戏启用抗锯齿线渲染。</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">闪烁：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">模拟矢量“闪烁”效果，类似于需要调整的矢量监视器。</font></font></li>
                 </ul>
-              </li>
-              <li><strong>Bottom as reload:</strong> Enable this option to allow shooting the bottom of the screen instead of off the screen (Lethal Enforcers, etc. in landscape, full scaled mode)</li>
+            </li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">默认 MAME 数据：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">将 MAME 数据恢复为默认值（cfg 和 nvram 文件）。</font><font style="vertical-align: inherit;">用于修复没有输入映射或网络游戏问题的问题（在两个对等点上使用）</font></font></li>
+        </ul>
+        <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">输入</font></font></h3>
+        <ul>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">触控控制器</font></font></strong>
+                <ul>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">模式</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（触控式）
+                    </font></font><ul>
+                        <li> <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">数字 DPAD：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">控制器是数字 DPAD。</font><font style="vertical-align: inherit;">有些游戏需要它或者更适合这种控制器。</font></font></li>
+                        <li> <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">数字棒：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">这是旧的假模拟棒。</font></font></li>
+                        <li> <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">模拟数字。</font><font style="vertical-align: inherit;">（性能）：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">控制器是一个完整的模拟摇杆，如果需要，MAME 将其映射到数字摇杆。</font><font style="vertical-align: inherit;">它是为性能而绘制的。</font></font></li>
+                        <li> <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">模拟数字（漂亮）：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">控制器是一个完整的模拟棒。</font></font></li>
+                    </ul>
+                    </li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">自定义布局：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">选择自定义横向触控布局。</font><font style="vertical-align: inherit;">完成后，您应该按“返回”。          </font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">默认触摸布局：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">将横向控件布局恢复为默认值。</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">按钮大小：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">选择全屏（横向）时的按钮大小</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">摇杆和 DPAD 大小：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在全屏（横向）时选择摇杆 DPAD 大小</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">按钮数量（全屏）：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">设置屏幕上的按钮数量（横向）</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">隐藏棒：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">启用以在全屏模式下隐藏棒。</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">动画：动画</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">开/关 DPad/Stick。</font><font style="vertical-align: inherit;">禁用以获得更好的性能。</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">振动：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在触摸按钮或 dpad/摇杆时启用/禁用设备振动。</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">数字死区：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">启用/禁用 DPAD 触控中心的死区。</font><font style="vertical-align: inherit;">对于某些游戏来说可能会更好。</font><font style="vertical-align: inherit;">如果您不喜欢它，请禁用它。</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">模拟死区：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">选择摇杆触摸中心的死区数量。          </font></font></li>
+                </ul>
+            </li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">外部控制器</font></font></strong>
+                <ul>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">模式</font></font></strong>
+                        <ul>
+                            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">键盘或 IME：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">选择此值以使用外部键盘或基于键盘 IME 的设备，如 WiiController。</font></font></li>
+                            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">控制器自动检测：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">即插即用检测许多 USB/蓝牙控制器。</font><font style="vertical-align: inherit;">支持多个控制器。</font></font></li>
+                            <li> <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Original iCade：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">选择此值以使用 iON 的 iCade 控制器。</font><font style="vertical-align: inherit;">在选择此选项之前通过蓝牙配对。</font></font></li>
+                            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">iCP、Gametel 或 iCade 兼容：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">选择此值以使用 iCade 兼容布局。</font><font style="vertical-align: inherit;">控制器应配置为 iCade 模式。</font></font></li>
+                        </ul>
+                    </li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">定义键：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">让您定义或映射硬件键到模拟器控件。</font><font style="vertical-align: inherit;">（Xperia Play 和任何其他带有物理键盘的设备用户应在此处配置他们的按钮或按键）。</font><font style="vertical-align: inherit;">如果自动检测到游戏手柄，您应该禁用自动检测以重新定义按钮。</font><font style="vertical-align: inherit;">您可以在此处重新映射所有四个玩家的控件。</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">默认键：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">将键映射恢复为默认设置。</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">自动映射选项：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">让您定义自动检测到 GamePad 时的拇指或 L1、L2 按钮行为。</font><font style="vertical-align: inherit;">使用它来更改多个选择之间的 Coin 和 Start 按钮映射。</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">退出时警告：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">启用此选项可在您在游戏期间按下外部控制器 (GamePad) 上的退出按钮时发出警告。</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">禁用右摇杆：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">自动检测到右摇杆时禁用它。</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">模拟死区：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">选择外部 GamePad 模拟小块上的死区数量。            </font></font></li>
+                </ul>
+            </li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">倾斜控制器</font></font></strong>
+                <ul>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">倾斜传感器：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">启用以使用倾斜传感器。</font><font style="vertical-align: inherit;">这使您可以使用内置的陀螺仪和加速度计来模拟操纵杆控制。</font><font style="vertical-align: inherit;">非常适合射击游戏来增加一些挑战，而不是使用触摸屏。</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">倾斜传感器死区：  </font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">选择倾斜传感器上的死区数量。</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">倾斜传感器灵敏度：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">设置 x 和 z 轴上的倾斜传感器灵敏度。</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">倾斜传感器中立垂直位置：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">设置 z 轴上的倾斜静止位置。</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">倾斜作为模拟：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">启用将倾斜传感器用作模拟设备，禁用以用作数字设备。</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">触摸任意位置：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">启用以点击屏幕上的任意位置进行射击。</font><font style="vertical-align: inherit;">第一指是主火。</font><font style="vertical-align: inherit;">食指按下时第二指是交替射击</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">反转 X 轴</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">- 反转 X 轴，因此倾斜控制感觉更像是一个控制轭（用于星球大战等）</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">交换 Z、Y 轴：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">启用交换 Z、Y 轴。</font><font style="vertical-align: inherit;">这修复了某些设备上的垂直倾斜。        </font></font></li>
+                </ul>
+            </li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">触摸光枪</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：启用以作为光枪点击触摸屏。</font><font style="vertical-align: inherit;">第一指是主火。</font><font style="vertical-align: inherit;">第一根手指按下时第二根手指是交替的
+            </font></font><ul>
+                <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">模式</font></font></strong>
+                    <ul>
+                        <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">自动</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：MAME4droid 将自动检测到光枪游戏，并自动启用触控光枪。</font></font></li>
+                        <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">已禁用</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：Touch Lightgun 已禁用</font></font></li>
+                        <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">启用：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">开启触控光枪。</font><font style="vertical-align: inherit;">如果 MAME4droid 无法检测到光枪游戏，这很有用。</font></font></li>
+                    </ul>
+                </li>
+                <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">底部重新加载：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">启用此选项以允许拍摄屏幕底部而不是屏幕外（横向，全尺寸模式下的致命执法者等）</font></font></li>
             </ul>
-        </li>
-        <li><strong>Nvidia Shield</strong>
-          <ul>
-        <li><strong>Nvidia Shield mouse:</strong> Enable mouse support on Nvidia Shield devices. Also lets you use advanced arcade controllers features like X-Arcade tankstick trackball on Nvidia Shield devices.</li>
-        <li><strong>Shield Controller as a mouse:</strong> Enable to use right stick on Shield Controller as a mouse instead as a second stick. That's way you can play better games like Arkanoid but you lose second stick support for games like Robotron.</li>
-          </ul>
-        </li>
-        <li><strong>Button A as Autofire:</strong> Set the A button to be autofire. Allows for nine different speed variations.</li>
-        <li><strong>Stick Type:</strong> Limits the joystick's range of motion: 8-way, 4-way, 2-way. Arcade game control panels were often retrofitted for a different game that had 4-way requirements that wouldn't function properly with an 8-way controller. A classic example of this is Pac-Man. The game was originally designed for a 4-way stick and is programmed  to respond only when a new input occurs. If the user is holding the stick in the 'down' position, then suddenly makes a motion  to move to the 'right', what often happens is that the stick first moves into the 'down-right' diagonal. The game  does not recognize as new input since 'down' is still being held. However, 'right' is also now considered held, and when the user  completes the motion to move 'right', it is also not a new input and Pac-Man will still be moving 'down'.</li>
-        <li><strong>P4,P3,P2 as P1: </strong>Send Player 1 input data to Player 2, 3, 4 so you can use the 2-4 players at the same time. Funny :). It makes some weird problems with some ROMs like Dungeons &amp; Dragons.</li>
-        <li><strong>Save-Load Combo:</strong> Enable it to press START+R1 to load a game and START+L1 to save a game.</li>
-      </ul>
-      <h3>General</h3>
-      <ul>
-        <li><strong>Change ROMs path:</strong> Change current ROMs path. This doesn't change the MAME4droid application folder, just where the ROMs can be found. You'll need to move the ROMs accordingly, of course. This is useful for storing your ROMs on an external storage while keeping the game settings, etc. stored internally. If you want to change the entire MAME4droid application folder, look under Advanced. Requires application restart.</li>
-        <li><strong>Image Enhancer: </strong>This setting allows you to apply HQx bitmap smoothing techniques to give the games a less pixelated look. HQ2x - HQ4x is supported. To learn more about HQx, <a class="link" href="http://en.wikipedia.org/wiki/Hqx" target="new">see this wiki</a>. Beware, HQx is CPU intensive. Use with high end devices.</li>
-        <li><strong>True RGB:</strong> Performs more accurate rendering of true colors but at the expense of performance. This will also improve the quality of artwork assets. Requires application restart.</li>
-        <li><strong>Notification Icon:</strong> Enable it to show a notification icon when MAME4droid is suspended.</li>
-        <li><strong>Navigation bar mode:</strong> Hide or dim navigation bar on Android versions 4.2 and higher. You can select immersive mode on Android versions 4.4 and higher. Disable  if you have problems with full screen modes.</li>
-        <li><strong>Scale beyond boundaries:</strong> Enable it to scale beyond screen boundaries if a fixed scale mode is selected.</li>
-        <li><strong>TV overscan:</strong> Enable it to apply a 10% &quot;safe area&quot; to correct overscan issues on some TV sets.</li>
-        <li><strong>Netplay port:</strong> Let you change port used during Netplay.</li>
-        <li><strong>Netplay host delay frame:</strong> denotes the maximum number of frames MAME4droid will need to emulate at once to maintain synchronization due to actual network latency.</li>
-      </ul>
-      <h3>Advanced</h3>
-      <ul>
-        <li><strong>Video Engine</strong>
-<ul>
-          <li><strong> SW:</strong> Software rendering. More accurate. Higher device compatibility.</li>
-            <li> <strong>GL:</strong> Open GL ES 1.1 or above. This should be your choice if it works fine for you. Faster rendering even with image filtering.</li>
-            </ul></li>
-        <li><strong>Sound Engine:</strong> Set the audio Engine. AudioTrack for safety. OpenSL for performance and low latency on capable devices.</li>
-        <li><strong>Threaded Video render:</strong> Enable it to use a dedicate thread to do the video rendering (performance gain on dual core devices). Disable if you have stuttering, artifacts or tearing.</li>
-        <li><strong>Video thread priority:</strong> Set to default value unless you have problems. Requires application restart.</li>
-        <li><strong>Double buffer:</strong> Avoids flickering at the expenses of performance.</li>
-        <li><strong>Main thread priority:</strong> Set to default value unless you have problems. Requires application restart.</li>
-        <li><strong>Alternate OpenGL Path:</strong> Enable it to use the newer OpenGL  render path. Select it if you have performance problems with old render path. Could not work in older devices (like overlay rendering) </li>
-        <li><strong>Debug Mode:</strong> Enable debug mode. Only for developers.</li>
-      </ul>
-      <h3>Display Settings</h3>
-      <p>MAME4droid allows separate display settings for portrait and landscape orientations.</p>
-      <ul>
-        <li><strong>Scaling Mode</strong>
-<ul>
-          <li><strong>Keep Aspect:</strong> keeps the aspect ratio</li>
-            <li><strong> Stretch to fit screen:</strong> will use all available screen. </li>
-            <li><strong> Original</strong></li>
-            <li><strong>Integer Scaling:</strong> For purists; get the most accurate scaling.</li>
-            <li><strong>1.5X: </strong>1.5 original size. </li>
-            <li><strong>2X:</strong> Double original size.</li>
-            <li><strong> 2.5X:</strong> 2.5 original size. </li>
-            <li> (... and so on)</li>
-          </ul>
-        </li>
-        <li><strong>Overlay Effect:</strong> Applies an image filter (scanlines, CRT) at the expense of performance. </li>
-        <li><strong>Touch controller visible:</strong> Hide/Show the touch controller. Disable if you want to use an external controller like a keyboard, Bluetooth controller or Wiimote.</li>
-        <li><strong>Smooth scaling:</strong> Turn on bitmap filtering at the expense of performance.</li>
-        <li><strong>Fullscreen:</strong> Enable full screen (portrait orientation only)<br>
-        </li>
-      </ul>
+            </li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">英伟达盾</font></font></strong>
+                <ul>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nvidia Shield 鼠标：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在 Nvidia Shield 设备上启用鼠标支持。</font><font style="vertical-align: inherit;">还可以让您在 Nvidia Shield 设备上使用高级街机控制器功能，例如 X-Arcade 坦克摇杆轨迹球。</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Shield Controller 作为鼠标：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">允许将 Shield Controller 上的右摇杆用作鼠标而不是第二个摇杆。</font><font style="vertical-align: inherit;">这样您就可以玩更好的游戏，例如 Arkanoid，但您会失去对 Robotron 等游戏的第二棒支持。</font></font></li>
+                </ul>
+            </li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">按钮 A 为自动开火：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">将 A 按钮设置为自动开火。</font><font style="vertical-align: inherit;">允许九种不同的速度变化。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">摇杆类型：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">限制操纵杆的运动范围：8 向、4 向、2 向。</font><font style="vertical-align: inherit;">街机游戏控制面板经​​常被改装用于具有 4 向要求的不同游戏，而 8 向控制器无法正常工作。</font><font style="vertical-align: inherit;">一个典型的例子是吃豆人。</font><font style="vertical-align: inherit;">该游戏最初是为 4 向摇杆设计的，并且被编程为仅在出现新输入时做出响应。</font><font style="vertical-align: inherit;">如果用户将摇杆保持在“向下”位置，然后突然做出移动到“右侧”的动作，通常会发生摇杆首先移动到“右下”对角线的情况。</font><font style="vertical-align: inherit;">游戏无法识别为新输入，因为“向下”仍处于按住状态。</font><font style="vertical-align: inherit;">然而，“右”现在也被认为是持有，当用户完成移动“右”的动作时，</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">P4,P3,P2 as P1：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">将播放器 1 的输入数据发送给播放器 2、3、4，这样您就可以同时使用 2-4 个播放器。</font><font style="vertical-align: inherit;">有趣的 ：）。</font><font style="vertical-align: inherit;">它对一些像龙与地下城这样的 ROM 造成了一些奇怪的问题。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Save-Load Combo：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">启用它以按 START+R1 加载游戏并按 START+L1 保存游戏。</font></font></li>
+        </ul>
+        <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">一般的</font></font></h3>
+        <ul>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">更改 ROM 路径：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">更改当前 ROM 路径。</font><font style="vertical-align: inherit;">这不会更改 MAME4droid 应用程序文件夹，只是可以找到 ROM 的位置。</font><font style="vertical-align: inherit;">当然，您需要相应地移动 ROM。</font><font style="vertical-align: inherit;">这对于将您的 ROM 存储在外部存储器上同时将游戏设置等存储在内部非常有用。</font><font style="vertical-align: inherit;">如果您想更改整个 MAME4droid 应用程序文件夹，请在 Advanced 下查看。</font><font style="vertical-align: inherit;">需要重新启动应用程序。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">图像增强器：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">此设置允许您应用 HQx 位图平滑技术，以使游戏的像素化程度更低。</font><font style="vertical-align: inherit;">HQ2x - 支持 HQ4x。</font><font style="vertical-align: inherit;">要了解有关 HQx 的更多信息，</font></font><a class="link" href="http://en.wikipedia.org/wiki/Hqx" target="new"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请参阅此 wiki</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font><font style="vertical-align: inherit;">请注意，HQx 是 CPU 密集型的。</font><font style="vertical-align: inherit;">与高端设备一起使用。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">True RGB：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">执行更准确的真实色彩渲染，但以牺牲性能为代价。</font><font style="vertical-align: inherit;">这也将提高艺术品资产的质量。</font><font style="vertical-align: inherit;">需要重新启动应用程序。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">通知图标：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">启用它以在 MAME4droid 暂停时显示通知图标。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">导航栏模式：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在 Android 4.2 及更高版本上隐藏或调暗导航栏。</font><font style="vertical-align: inherit;">您可以在 Android 4.4 及更高版本上选择沉浸式模式。</font><font style="vertical-align: inherit;">如果您在使用全屏模式时遇到问题，请禁用。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">超出边界缩放：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果选择了固定缩放模式，则使其可以超出屏幕边界。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">电视过扫描：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">启用它以应用 10% 的“安全区域”来纠正某些电视机上的过扫描问题。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">网络播放端口：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">让您更改网络播放期间使用的端口。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Netplay 主机延迟帧：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">表示由于实际网络延迟，MAME4droid 需要一次模拟以保持同步的最大帧数。</font></font></li>
+        </ul>
+        <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">先进的</font></font></h3>
+        <ul>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">视频引擎</font></font></strong>
+                <ul>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SW：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">软件渲染。</font><font style="vertical-align: inherit;">更准确的。</font><font style="vertical-align: inherit;">更高的设备兼容性。</font></font></li>
+                    <li> <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">GL：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">开启 GL ES 1.1 或更高版本。</font><font style="vertical-align: inherit;">如果它适合您，这应该是您的选择。</font><font style="vertical-align: inherit;">即使使用图像过滤，渲染速度也会更快。</font></font></li>
+                </ul></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">声音引擎：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">设置音频引擎。</font><font style="vertical-align: inherit;">AudioTrack 以确保安全。</font><font style="vertical-align: inherit;">OpenSL 在有能力的设备上实现高性能和低延迟。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">线程视频渲染：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使其能够使用专用线程进行视频渲染（双核设备上的性能提升）。</font><font style="vertical-align: inherit;">如果您有口吃、伪影或撕裂，请禁用。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">视频线程优先级：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">除非您有问题，否则设置为默认值。</font><font style="vertical-align: inherit;">需要重新启动应用程序。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">双缓冲：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">以性能为代价避免闪烁。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">主线程优先级：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">除非遇到问题，否则设置为默认值。</font><font style="vertical-align: inherit;">需要重新启动应用程序。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Alternate OpenGL Path：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">启用它以使用较新的 OpenGL 渲染路径。</font><font style="vertical-align: inherit;">如果旧渲染路径存在性能问题，请选择它。</font><font style="vertical-align: inherit;">无法在旧设备中工作（如叠加渲染）</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">调试模式：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">启用调试模式。</font><font style="vertical-align: inherit;">仅适用于开发人员。</font></font></li>
+        </ul>
+        <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">显示设置</font></font></h3>
+        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MAME4droid 允许纵向和横向的单独显示设置。</font></font></p>
+        <ul>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">缩放模式</font></font></strong>
+                <ul>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">保持纵横比：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">保持纵横比</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">拉伸以适应屏幕：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">将使用所有可用的屏幕。</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">原版的</font></font></strong></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">整数缩放：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">对于纯粹主义者；</font><font style="vertical-align: inherit;">获得最准确的缩放比例。</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1.5X：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 1.5 原始尺寸。</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2X：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">原稿尺寸的两倍。</font></font></li>
+                    <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2.5X：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 2.5 原始尺寸。</font></font></li>
+                    <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（... 等等）</font></font></li>
+                </ul>
+            </li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">叠加效果：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">以牺牲性能为代价应用图像过滤器（扫描线、CRT）。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">触摸控制器可见：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">隐藏/显示触摸控制器。</font><font style="vertical-align: inherit;">如果您想使用键盘、蓝牙控制器或 Wiimote 等外部控制器，请禁用。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">平滑缩放：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">以牺牲性能为代价开启位图过滤。</font></font></li>
+            <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">全屏：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">启用全屏（仅限纵向）</font></font><br>
+            </li>
+        </ul>
 
-  </div><!-- /content -->
+    </div><!-- /content -->
 
-<div class="header"> 
-<h4 class="title"><a class="link" href="javascript:history.go(-1)" data-direction="reverse">Go Back</a></h4> 
-</div>  
-  
-</div><!-- /page -->
-</body>
-</html>
+    <div class="header">
+        <h4 class="title"><a class="link" href="javascript:history.go(-1)" data-direction="reverse"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">回去</font></font></a></h4>
+    </div>
+
+</div><!-- /page --><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="https://www.gstatic.com/images/branding/product/1x/translate_24dp.png" width="20" height="20" alt="Google 翻译"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">原文</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">提供更好的翻译建议</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div>
+
+
+<div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div></body></html>
