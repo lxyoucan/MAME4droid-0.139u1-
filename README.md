@@ -1,3 +1,11 @@
+# 修改说明
+1. 设置菜单与弹出框汉化。
+2. 增加关闭游戏自动保存进度。
+
+# 下载与演示
+https://www.bilibili.com/video/BV14341157zZ
+---
+
 MAME4droid (0.139u1) is developed by David Valdeita (Seleuco) as a port of the MAME 0.139 emulator by Nicola Salmoria and the MAME team. It emulates arcade games supported by this version of MAME which includes over 8000 different ROMs.
 
 * MAME4droid is an EMULATOR and DOES NOT INCLUDE ROMS OR COPYRIGHTED MATERIAL OF ANY KIND.
