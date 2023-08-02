@@ -44,14 +44,6 @@
 
 package com.seleuco.mame4droid;
 
-import java.net.InetAddress;
-import java.net.NetworkInterface;
-import java.util.Collections;
-import java.util.Enumeration;
-import java.util.List;
-import java.util.Locale;
-import java.util.regex.Pattern;
-
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -67,7 +59,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.seleuco.mame4droid.helpers.PrefsHelper;
-import com.seleuco.mame4droid.R;
+
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.util.Collections;
+import java.util.Enumeration;
+import java.util.List;
+import java.util.Locale;
+import java.util.regex.Pattern;
 
 
 public class NetPlay {
@@ -116,11 +115,11 @@ public class NetPlay {
 		String name = Emulator.getValueStr(Emulator.GAME_SELECTED);
 		if(name!=null && name.length()!=0)
 		{
-		   startButton.setText("Start game: "+name);		   
+		   startButton.setText("开始游戏："+name);
 		}
 		else
 		{
-			startButton.setText("Start game");
+			startButton.setText("开始游戏");
 			startButton.setEnabled(false);
 		}
 	}
@@ -133,7 +132,7 @@ public class NetPlay {
 		netplayDlg = new Dialog(mm);
 
 		netplayDlg.setContentView(R.layout.netplayview);
-		netplayDlg.setTitle("Peer-To-Peer Netplay");
+		netplayDlg.setTitle("面对面联网游戏");
 		netplayDlg.setCancelable(true);
 		netplayDlg.setOnCancelListener(dialogCancelListener);
 
@@ -172,14 +171,14 @@ public class NetPlay {
 			});
 
 			builder.setTitle("Open Wi-Fi Settings?");
-			builder.setPositiveButton("Yes",
+			builder.setPositiveButton("确定",
 					new DialogInterface.OnClickListener() {
 						public void onClick(DialogInterface dialog, int id) {
 							mm.startActivity(new Intent(
 									WifiManager.ACTION_PICK_WIFI_NETWORK));
 						}
 					});
-			builder.setNegativeButton("No",
+			builder.setNegativeButton("取消",
 					new DialogInterface.OnClickListener() {
 						public void onClick(DialogInterface dialog, int id) {
 							netplayDlg.show();
@@ -262,7 +261,7 @@ public class NetPlay {
 		public void onClick(View v) {	
 			AlertDialog.Builder alert = new AlertDialog.Builder(mm);
 
-			alert.setTitle("Enter peer IP Address:");
+			alert.setTitle("输入对方 IP 地址：");
 			//alert.setMessage("Enter peer IP address:");
 
 			final EditText input = new EditText(mm);
@@ -273,13 +272,13 @@ public class NetPlay {
 			input.setText(ip);
 			input.setSelection(input.getText().length());
 
-			alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+			alert.setPositiveButton("确定", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int whichButton) {
 			     String ip = input.getText().toString();
 			     
 			     if(ip==null || ip.length()==0)
 			     {
-					Toast.makeText(mm, "Invalid peer IP!",Toast.LENGTH_SHORT).show();
+					Toast.makeText(mm, "IP 无效！",Toast.LENGTH_SHORT).show();
 					return;
 			     }
 	
@@ -295,7 +294,7 @@ public class NetPlay {
 			  }
 			});
 
-			alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+			alert.setNegativeButton("取消", new DialogInterface.OnClickListener() {
 			  public void onClick(DialogInterface dialog, int whichButton) {
 			    // Canceled.
 			  }
@@ -310,7 +309,7 @@ public class NetPlay {
 	Button.OnClickListener disconnectGameClick = new Button.OnClickListener() {
 		public void onClick(View v) {			
 			Emulator.setValue(Emulator.NETPLAY_HAS_CONNECTION, 0);
-			Toast.makeText(mm, "Disconnected from Netplay",Toast.LENGTH_SHORT).show();	
+			Toast.makeText(mm, "连接已断开",Toast.LENGTH_SHORT).show();
 			prepareButtons();
 		}
 	};	
@@ -321,20 +320,20 @@ public class NetPlay {
 		int port = 0;
 		try{port = Integer.parseInt(strPort);}catch(Exception e){}
 		if(!(port>=1024 && port <= 32768*2)){
-			Toast.makeText(mm, "Invalid Port",Toast.LENGTH_SHORT).show();
+			Toast.makeText(mm, "端口无效",Toast.LENGTH_SHORT).show();
 			return;
 		}
 
 		if (Emulator.netplayInit(null, port, 0) == -1) {
-			Toast.makeText(mm, "Error initializing Netplay!",Toast.LENGTH_SHORT).show();
+			Toast.makeText(mm, "初始化出错！",Toast.LENGTH_SHORT).show();
 			return;
 		}
 		
 		//netplayDlg.hide();
 
 		canceled = false;
-		progressDialog = ProgressDialog.show(mm, "Press back to cancel",
-				"Creating game at ...", true, true,
+		progressDialog = ProgressDialog.show(mm, "按返回键取消",
+				"创建游戏 ...", true, true,
 				new DialogInterface.OnCancelListener() {
 					@Override
 					public void onCancel(DialogInterface dialog) {
@@ -355,13 +354,13 @@ public class NetPlay {
 					canceled = true;
 			    	mm.runOnUiThread(new Runnable() {
 			            public void run() {
-			            	Toast.makeText(mm, "No IP address available!. Is Wi-Fi enabled?",Toast.LENGTH_LONG).show();
+			            	Toast.makeText(mm, "无可用的 IP 地址。Wi-Fi 是否已启用？",Toast.LENGTH_LONG).show();
 			            }
 			    	});					
 				}
 		    	mm.runOnUiThread(new Runnable() {
 		            public void run() {
-		            	 progressDialog.setMessage("Waiting for peer...\nCreating game at :" + ip );
+		            	 progressDialog.setMessage("等待对方...\n游戏创建于：" + ip );
 		            }
 		    	});					  
 				while (Emulator.getValue(Emulator.NETPLAY_HAS_JOINED) == 0 && !canceled) {
@@ -388,7 +387,7 @@ public class NetPlay {
 		            	{
 		            		if(netplayDlg.isShowing())
 		            		  netplayDlg.hide();
-		            		Toast.makeText(mm, "Connected. Starting Netplay!",Toast.LENGTH_SHORT).show();			            		
+		            		Toast.makeText(mm, "已连接。开始游戏！",Toast.LENGTH_SHORT).show();
 		            		Emulator.resume();
 		            	}
 		            }
@@ -404,12 +403,12 @@ public class NetPlay {
 		int port = 0;
 		try{port = Integer.parseInt(strPort);}catch(Exception e){}
 		if(!(port>=1024 && port <= 32768*2)){
-			Toast.makeText(mm, "Invalid Port",Toast.LENGTH_SHORT).show();
+			Toast.makeText(mm, "端口无效",Toast.LENGTH_SHORT).show();
 			return;
 		}
 		
 		if (Emulator.netplayInit(addr, port, 0) == -1) {
-			Toast.makeText(mm, "Error initializing Netplay!",
+			Toast.makeText(mm, "初始化出错！",
 					Toast.LENGTH_SHORT).show();
 			return;
 		}
@@ -417,8 +416,8 @@ public class NetPlay {
 		//netplayDlg.hide();
 		
 		canceled = false;
-		progressDialog = ProgressDialog.show(mm, "Press back to cancel",
-				"Connecting to :" + addr, true, true,
+		progressDialog = ProgressDialog.show(mm, "按返回键取消",
+				"连接到：" + addr, true, true,
 				new DialogInterface.OnCancelListener() {
 					@Override
 					public void onCancel(DialogInterface dialog) {
@@ -456,7 +455,7 @@ public class NetPlay {
 		            	{
 		            		if(netplayDlg.isShowing())
 			            		  netplayDlg.hide();
-		            		Toast.makeText(mm, "Connected. Starting Netplay!",Toast.LENGTH_SHORT).show();
+		            		Toast.makeText(mm, "已连接。开始游戏！",Toast.LENGTH_SHORT).show();
 		            		Emulator.resume();
 		            	}
 		            }

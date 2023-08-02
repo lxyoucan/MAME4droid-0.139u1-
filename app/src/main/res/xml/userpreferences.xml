@@ -7,7 +7,7 @@
 		<PreferenceScreen
 			android:key="PREFSCR_GAME_FILTER"
 			android:persistent="false"
-			android:summary="选择它以打开游戏过滤器选项"
+			android:summary="选择以打开游戏过滤器选项"
 			android:title="游戏筛选">
 
 			<CheckBoxPreference
@@ -69,7 +69,7 @@
 		<PreferenceScreen
 			android:key="PREFSCR_EMU"
 			android:persistent="false"
-			android:summary="选择它以打开模拟器选项"
+			android:summary="选择以打开模拟器选项"
 			android:title="模拟器">
 
 			<CheckBoxPreference
@@ -182,7 +182,7 @@
 			<PreferenceScreen
 				android:key="vector"
 				android:persistent="false"
-				android:summary="选择它以打开矢量游戏选项"
+				android:summary="选择以打开矢量游戏选项"
 				android:title="矢量">
 
 				<com.seleuco.mame4droid.prefs.CheckBoxPrefWithWarn
@@ -215,13 +215,13 @@
 		<PreferenceScreen
 			android:key="inputSettings"
 			android:persistent="false"
-			android:summary="选择它以打开输入选项"
+			android:summary="选择以打开输入选项"
 			android:title="输入">
 
 			<PreferenceScreen
 				android:key="touchController"
 				android:persistent="false"
-				android:summary="选择它以打开触摸控制器选项"
+				android:summary="选择以打开触摸控制器选项"
 				android:title="触控控制器">
 
 				<ListPreference
@@ -299,7 +299,7 @@
 			<PreferenceScreen
 				android:key="externalController"
 				android:persistent="false"
-				android:summary="选择它以打开外部控制器 (GamePads) 选项"
+				android:summary="选择以打开外部控制器 (GamePads) 选项"
 				android:title="外部控制器">
 
 				<ListPreference
@@ -356,7 +356,7 @@
 			<PreferenceScreen
 				android:key="tiltController"
 				android:persistent="false"
-				android:summary="选择它以打开倾斜控制器选项"
+				android:summary="选择以打开倾斜控制器选项"
 				android:title="倾斜控制器">
 
 				<CheckBoxPreference
@@ -421,7 +421,7 @@
 			<PreferenceScreen
 				android:key="lightgunController"
 				android:persistent="false"
-				android:summary="选择它以打开触摸光枪选项。（第一根手指为主火，第二根手指按下时为备用火）"
+				android:summary="选择以打开触摸光枪选项。（第一根手指为主火，第二根手指按下时为备用火）"
 				android:title="触摸光枪">
 
 				<ListPreference
@@ -442,7 +442,7 @@
 			<PreferenceScreen
 				android:key="shieldInput"
 				android:persistent="false"
-				android:summary="选择它以打开 Nvidia Shield 输入选项"
+				android:summary="选择以打开 Nvidia Shield 输入选项"
 				android:title="Nvidia Shield">
 
 				<com.seleuco.mame4droid.prefs.CheckBoxPrefWithWarn
@@ -492,12 +492,12 @@
 		<PreferenceScreen
 			android:key="general"
 			android:persistent="false"
-			android:summary="选择它以打开常规选项"
+			android:summary="选择以打开常规选项"
 			android:title="常规">
 
 			<PreferenceScreen
 				android:key="changeRomPath"
-				android:summary="更改ROM位置,您必须手动移动 ROM 文件"
+				android:summary="更改 ROM 位置，您必须手动移动 ROM 文件"
 				android:title="更改 ROM 路径" />
 
 			<com.seleuco.mame4droid.prefs.ListPrefWithWarn
@@ -553,21 +553,21 @@
 				android:dialogTitle="Netplay PORT:"
 				android:inputType="number"
 				android:key="PREF_NETPLAY_PORT"
-				android:title="联网端口" />
+				android:title="联机游戏联网端口" />
 
 			<ListPreference
 				android:defaultValue="2"
 				android:entries="@array/pref_netplay_delay_options"
 				android:entryValues="@array/pref_netplay_delay_values"
 				android:key="PREF_NETPLAY_DELAY_3"
-				android:title='网络播放主机延迟帧' />
+				android:title='联机游戏主机延迟帧' />
 
 		</PreferenceScreen>
 
 		<PreferenceScreen
 			android:key="advanced"
 			android:persistent="false"
-			android:summary="选择它以打开高级选项"
+			android:summary="选择以打开高级选项"
 			android:title="高级">
 
 			<com.seleuco.mame4droid.prefs.ListPrefWithWarn
@@ -582,7 +582,7 @@
 				android:entries="@array/pref_sound_engine_options"
 				android:entryValues="@array/pref_sound_engine_values"
 				android:key="PREF_SOUND_ENGINE"
-				android:title='声音引擎' />
+				android:title='音频引擎' />
 
 			<com.seleuco.mame4droid.prefs.CheckBoxPrefWithWarn
 				android:defaultValue="True"
@@ -613,7 +613,7 @@
 
 			<com.seleuco.mame4droid.prefs.EditTextPrefWithWarn
 				android:defaultValue=""
-				android:dialogTitle="Change installation path:"
+				android:dialogTitle="修改安装路径："
 				android:key="PREF_INSTALLATION_DIR"
 				android:title="安装路径" />
 

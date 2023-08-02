@@ -12,10 +12,10 @@
     <string name="menu_quit">退出程度</string>
     <string name="app_name">MAME</string>
     <string name="disconnect">断开连接</string>
-    <string name="join_peer_game">Join Peer Game</string>
+    <string name="join_peer_game">加入多人游戏</string>
     <string name="start_game">开始游戏</string>
     <string name="netplay">联机</string>
     <string name="connection">Peer-to-peer Netplay</string>
-    <string name="wifiTIP">TIP: To get optimal network performance or to play without an access point, enable a Wi-Fi direct connection between peer devices.</string>
-    <string name="don_t_bother">不在询问</string>
+    <string name="wifiTIP">提示：要获得最佳的网络性能或在没有接入点的情况下玩游戏，请在对等设备之间启用Wi-Fi直连。</string>
+    <string name="don_t_bother">不再询问</string>
 </resources>
