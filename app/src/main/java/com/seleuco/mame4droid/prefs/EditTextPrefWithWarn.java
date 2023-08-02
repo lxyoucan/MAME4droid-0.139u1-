@@ -76,16 +76,16 @@ public class EditTextPrefWithWarn extends EditTextPreference {
 		} 
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(context);
-		builder.setMessage("Are you sure? (app restart needed)")
+		builder.setMessage("确认操作？（需要重启程序）")
 				.setCancelable(false)
-				.setPositiveButton("Yes",
+				.setPositiveButton("确定",
 						new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog, int id) {
 								EditTextPrefWithWarn.super.onDialogClosed(true);
 								Emulator.setNeedRestart(true);
 							}
 						})
-				.setNegativeButton("No", new DialogInterface.OnClickListener() {
+				.setNegativeButton("取消", new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int id) {
 						EditTextPrefWithWarn.super.onDialogClosed(false);
 					}

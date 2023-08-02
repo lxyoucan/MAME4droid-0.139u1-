@@ -44,14 +44,14 @@
 
 package com.seleuco.mame4droid.prefs;
 
-import com.seleuco.mame4droid.Emulator;
-
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.preference.CheckBoxPreference;
 import android.util.AttributeSet;
+
+import com.seleuco.mame4droid.Emulator;
 
 public class CheckBoxPrefWithWarn extends CheckBoxPreference {
 	
@@ -72,16 +72,16 @@ public class CheckBoxPrefWithWarn extends CheckBoxPreference {
 
 		
 		AlertDialog.Builder builder = new AlertDialog.Builder(context);
-		builder.setMessage("Are you sure? (app restart needed)")
+		builder.setMessage("确认操作？（需要重启程序）")
 				.setCancelable(false)
-				.setPositiveButton("Yes",
+				.setPositiveButton("确定",
 						new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog, int id) {
 								CheckBoxPrefWithWarn.super.onClick();
 								Emulator.setNeedRestart(true);
 							}
 						})
-				.setNegativeButton("No", new DialogInterface.OnClickListener() {
+				.setNegativeButton("取消", new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int id) {
 					}
 				});

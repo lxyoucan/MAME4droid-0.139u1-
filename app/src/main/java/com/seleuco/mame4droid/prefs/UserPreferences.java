@@ -44,9 +44,6 @@
 
 package com.seleuco.mame4droid.prefs;
 
-import java.io.File;
-import java.io.FilenameFilter;
-
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -67,6 +64,9 @@ import com.seleuco.mame4droid.helpers.PrefsHelper;
 import com.seleuco.mame4droid.input.ControlCustomizer;
 import com.seleuco.mame4droid.input.InputHandler;
 import com.seleuco.mame4droid.input.InputHandlerExt;
+
+import java.io.File;
+import java.io.FilenameFilter;
 
 public class UserPreferences extends PreferenceActivity implements OnSharedPreferenceChangeListener {
 	
@@ -259,56 +259,56 @@ public class UserPreferences extends PreferenceActivity implements OnSharedPrefe
 	        boolean enable;
 	        // Setup the initial values
 	        //mCheckBoxPreference.setSummary(sharedPreferences.getBoolean(key, false) ? "Disable this setting" : "Enable this setting");
-	        mPrefGlobalVideoRenderMode.setSummary("Current value is '" + mPrefGlobalVideoRenderMode.getEntry()+"'");
+	        mPrefGlobalVideoRenderMode.setSummary("已选择：" + mPrefGlobalVideoRenderMode.getEntry());
 			enable = Integer.valueOf(mPrefGlobalVideoRenderMode.getValue()).intValue() ==PrefsHelper.PREF_RENDER_GL;
 			getPreferenceScreen().findPreference(PrefsHelper.PREF_FORCE_ALTGLPATH).setEnabled(enable);
 			getPreferenceScreen().findPreference(PrefsHelper.PREF_RENDER_RGB).setEnabled(enable);
 	        
-	        mPrefResolution.setSummary("Current value is '" + mPrefResolution.getEntry()+"'");
-	        mPrefSpeed.setSummary("Current value is '" + mPrefSpeed.getEntry()+"'");
-	        mPrefPortraitMode.setSummary("Current value is '" + mPrefPortraitMode.getEntry()+"'"); 
-	        mPrefLandsMode.setSummary("Current value is '" + mPrefLandsMode.getEntry()+"'"); 
-	        mPrefPortraitOverlay.setSummary("Current value is '" + mPrefPortraitOverlay.getEntry()+"'"); 
-	        mPrefLandsOverlay.setSummary("Current value is '" + mPrefLandsOverlay.getEntry()+"'"); 	        
-	        mPrefControllerType.setSummary("Current value is '" + mPrefControllerType.getEntry()+"'");
-	        mPrefExtInput.setSummary("Current value is '" + mPrefExtInput.getEntry()+"'");
+	        mPrefResolution.setSummary("已选择：" + mPrefResolution.getEntry());
+	        mPrefSpeed.setSummary("已选择：" + mPrefSpeed.getEntry());
+	        mPrefPortraitMode.setSummary("已选择：" + mPrefPortraitMode.getEntry()); 
+	        mPrefLandsMode.setSummary("已选择：" + mPrefLandsMode.getEntry()); 
+	        mPrefPortraitOverlay.setSummary("已选择：" + mPrefPortraitOverlay.getEntry()); 
+	        mPrefLandsOverlay.setSummary("已选择：" + mPrefLandsOverlay.getEntry()); 	        
+	        mPrefControllerType.setSummary("已选择：" + mPrefControllerType.getEntry());
+	        mPrefExtInput.setSummary("已选择：" + mPrefExtInput.getEntry());
 	        
 	        enable = Integer.valueOf(mPrefExtInput.getValue()).intValue() == PrefsHelper.PREF_INPUT_USB_AUTO;
 	        getPreferenceScreen().findPreference(PrefsHelper.PREF_AUTOMAP_OPTIONS).setEnabled(enable);
 	        getPreferenceScreen().findPreference(PrefsHelper.PREF_DISABLE_RIGHT_STICK).setEnabled(enable);
 	        
-	        mPrefAutomap.setSummary("Current value is '" + mPrefAutomap.getEntry()+"'");
-	        mPrefAnalogDZ.setSummary("Current value is '" + mPrefAnalogDZ.getEntry()+"'");
-	        mPrefGamepadDZ.setSummary("Current value is '" + mPrefGamepadDZ.getEntry()+"'");
-	        mPrefTiltDZ.setSummary("Current value is '" + mPrefTiltDZ.getEntry()+"'");
-	        mPrefTiltNeutral.setSummary("Current value is '" + mPrefTiltNeutral.getEntry()+"'");
-	        mPrefFrameSkip.setSummary("Current value is '" + mPrefFrameSkip.getEntry()+"'");
-	        mPrefSound.setSummary("Current value is '" + mPrefSound.getEntry()+"'");
-	        mPrefStickType.setSummary("Current value is '" + mPrefStickType.getEntry()+"'");
-	        mPrefNumButtons.setSummary("Current value is '" + mPrefNumButtons.getEntry()+"'");
-	        mPrefSizeButtons.setSummary("Current value is '" + mPrefSizeButtons.getEntry()+"'");
-	        mPrefSizeStick.setSummary("Current value is '" + mPrefSizeStick.getEntry()+"'");
-	        mPrefVideoThPr.setSummary("Current value is '" + mPrefVideoThPr.getEntry()+"'");
-	        mPrefMainThPr.setSummary("Current value is '" + mPrefMainThPr.getEntry()+"'");
-	        mPrefSoundEngine.setSummary("Current value is '" + mPrefSoundEngine.getEntry()+"'");
-	        mPrefAutofire.setSummary("Current value is '" + mPrefAutofire.getEntry()+"'");
-	        mPrefVSync.setSummary("Current value is '" + mPrefVSync.getEntry()+"'");
-	        mPrefFilterCat.setSummary("Current value is '" + mPrefFilterCat.getEntry()+"'");
-	        mPrefFilterDrvSrc.setSummary("Current value is '" + mPrefFilterDrvSrc.getEntry()+"'");
-	        mPrefFilterManuf.setSummary("Current value is '" + mPrefFilterManuf.getEntry()+"'");
-	        mPrefFilterYGTE.setSummary("Current value is '" + mPrefFilterYGTE.getEntry()+"'");
-	        mPrefFilterYLTE.setSummary("Current value is '" + mPrefFilterYLTE.getEntry()+"'");   
-	        mPrefFilterkeyword.setSummary("Current value is '" + mPrefFilterkeyword.getText()+"'"); 
-	        //mPrefOverlayInt.setSummary("Current value is '" + mPrefOverlayInt.getEntry()+"'"); 
-	        mPrefForcPX.setSummary("Current value is '" + mPrefForcPX.getEntry()+"'");
-	        mPrefNetplayDelay.setSummary("Current value is '" + mPrefNetplayDelay.getEntry()+"'");
-	        mPrefNetplayPort.setSummary("Current value is '" + mPrefNetplayPort.getText()+"'"); 
-	        mPrefNavbar.setSummary("Current value is '" + mPrefNavbar.getEntry()+"'");
-	        mPrefImageEffect.setSummary("Current value is '" + mPrefImageEffect.getEntry()+"'");
-			mPrefInstPath.setSummary("Current value is '" + mPrefInstPath.getText()+"'");
-			mPrefLightgun.setSummary("Current value is '" + mPrefLightgun.getEntry()+"'");
-			mPrefBios.setSummary("Current value is '" + mPrefBios.getEntry()+"'");
-			mPrefRefresh.setSummary("Current value is '" + mPrefRefresh.getText()+"'"); 
+	        mPrefAutomap.setSummary("已选择：" + mPrefAutomap.getEntry());
+	        mPrefAnalogDZ.setSummary("已选择：" + mPrefAnalogDZ.getEntry());
+	        mPrefGamepadDZ.setSummary("已选择：" + mPrefGamepadDZ.getEntry());
+	        mPrefTiltDZ.setSummary("已选择：" + mPrefTiltDZ.getEntry());
+	        mPrefTiltNeutral.setSummary("已选择：" + mPrefTiltNeutral.getEntry());
+	        mPrefFrameSkip.setSummary("已选择：" + mPrefFrameSkip.getEntry());
+	        mPrefSound.setSummary("已选择：" + mPrefSound.getEntry());
+	        mPrefStickType.setSummary("已选择：" + mPrefStickType.getEntry());
+	        mPrefNumButtons.setSummary("已选择：" + mPrefNumButtons.getEntry());
+	        mPrefSizeButtons.setSummary("已选择：" + mPrefSizeButtons.getEntry());
+	        mPrefSizeStick.setSummary("已选择：" + mPrefSizeStick.getEntry());
+	        mPrefVideoThPr.setSummary("已选择：" + mPrefVideoThPr.getEntry());
+	        mPrefMainThPr.setSummary("已选择：" + mPrefMainThPr.getEntry());
+	        mPrefSoundEngine.setSummary("已选择：" + mPrefSoundEngine.getEntry());
+	        mPrefAutofire.setSummary("已选择：" + mPrefAutofire.getEntry());
+	        mPrefVSync.setSummary("已选择：" + mPrefVSync.getEntry());
+	        mPrefFilterCat.setSummary("已选择：" + mPrefFilterCat.getEntry());
+	        mPrefFilterDrvSrc.setSummary("已选择：" + mPrefFilterDrvSrc.getEntry());
+	        mPrefFilterManuf.setSummary("已选择：" + mPrefFilterManuf.getEntry());
+	        mPrefFilterYGTE.setSummary("已选择：" + mPrefFilterYGTE.getEntry());
+	        mPrefFilterYLTE.setSummary("已选择：" + mPrefFilterYLTE.getEntry());   
+	        mPrefFilterkeyword.setSummary("已选择：" + mPrefFilterkeyword.getText()); 
+	        //mPrefOverlayInt.setSummary("已选择：" + mPrefOverlayInt.getEntry()); 
+	        mPrefForcPX.setSummary("已选择：" + mPrefForcPX.getEntry());
+	        mPrefNetplayDelay.setSummary("已选择：" + mPrefNetplayDelay.getEntry());
+	        mPrefNetplayPort.setSummary("已选择：" + mPrefNetplayPort.getText()); 
+	        mPrefNavbar.setSummary("已选择：" + mPrefNavbar.getEntry());
+	        mPrefImageEffect.setSummary("已选择：" + mPrefImageEffect.getEntry());
+			mPrefInstPath.setSummary("已选择：" + mPrefInstPath.getText());
+			mPrefLightgun.setSummary("已选择：" + mPrefLightgun.getEntry());
+			mPrefBios.setSummary("已选择：" + mPrefBios.getEntry());
+			mPrefRefresh.setSummary("已选择：" + mPrefRefresh.getText()); 
 			 
 	        // Set up a listener whenever a key changes            
 	        getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
@@ -332,43 +332,43 @@ public class UserPreferences extends PreferenceActivity implements OnSharedPrefe
 	        else*/ 
 	        if (key.equals(PrefsHelper.PREF_PORTRAIT_SCALING_MODE)) 
 	        {
-	            mPrefPortraitMode.setSummary("Current value is '" + mPrefPortraitMode.getEntry()+"'"); 
+	            mPrefPortraitMode.setSummary("已选择：" + mPrefPortraitMode.getEntry()); 
 	        }
 	        else if(key.equals(PrefsHelper.PREF_LANDSCAPE_SCALING_MODE))
 	        {
-	        	mPrefLandsMode.setSummary("Current value is '" + mPrefLandsMode.getEntry()+"'");	
+	        	mPrefLandsMode.setSummary("已选择：" + mPrefLandsMode.getEntry());	
 	        }
 	        if (key.equals(PrefsHelper.PREF_PORTRAIT_OVERLAY)) 
 	        {
-	        	mPrefPortraitOverlay.setSummary("Current value is '" + mPrefPortraitOverlay.getEntry()+"'"); 
+	        	mPrefPortraitOverlay.setSummary("已选择：" + mPrefPortraitOverlay.getEntry()); 
 	        }
 	        else if(key.equals(PrefsHelper.PREF_LANDSCAPE_OVERLAY))
 	        {
-	        	mPrefLandsOverlay.setSummary("Current value is '" + mPrefLandsOverlay.getEntry()+"'");	
+	        	mPrefLandsOverlay.setSummary("已选择：" + mPrefLandsOverlay.getEntry());	
 	        }	        
 	        else if(key.equals(PrefsHelper.PREF_CONTROLLER_TYPE))
 	        {	
-	            mPrefControllerType.setSummary("Current values is '" + mPrefControllerType.getEntry()+"'");
+	            mPrefControllerType.setSummary("Current values is '" + mPrefControllerType.getEntry());
 	        }
 	        else if(key.equals(PrefsHelper.PREF_GLOBAL_VIDEO_RENDER_MODE))
 	        {		        	
-				mPrefGlobalVideoRenderMode.setSummary("Current value is '" + mPrefGlobalVideoRenderMode.getEntry()+"'"); 
+				mPrefGlobalVideoRenderMode.setSummary("已选择：" + mPrefGlobalVideoRenderMode.getEntry()); 
 				boolean enable = Integer.valueOf(mPrefGlobalVideoRenderMode.getValue()).intValue() ==PrefsHelper.PREF_RENDER_GL;
 				getPreferenceScreen().findPreference(PrefsHelper.PREF_FORCE_ALTGLPATH).setEnabled(enable);
 				getPreferenceScreen().findPreference(PrefsHelper.PREF_RENDER_RGB).setEnabled(enable);
 	        }
 	        else if(key.equals(PrefsHelper.PREF_GLOBAL_RESOLUTION))
 	        {	
-	        	mPrefResolution.setSummary("Current value is '" + mPrefResolution.getEntry()+"'"); 
+	        	mPrefResolution.setSummary("已选择：" + mPrefResolution.getEntry()); 
 	        }	
 	        else if(key.equals(PrefsHelper.PREF_GLOBAL_SPEED))
 	        {	
-	        	mPrefSpeed.setSummary("Current value is '" + mPrefSpeed.getEntry()+"'"); 
+	        	mPrefSpeed.setSummary("已选择：" + mPrefSpeed.getEntry()); 
 	        }	        
 	        else if(key.equals(PrefsHelper.PREF_INPUT_EXTERNAL))
 	        {	
 	        	try{InputHandlerExt.resetAutodetected();}catch(Throwable e){};
-	        	mPrefExtInput.setSummary("Current value is '" + mPrefExtInput.getEntry()+"'"); 
+	        	mPrefExtInput.setSummary("已选择：" + mPrefExtInput.getEntry()); 
 		        boolean enable = Integer.valueOf(mPrefExtInput.getValue()).intValue() ==PrefsHelper.PREF_INPUT_USB_AUTO;
 		        getPreferenceScreen().findPreference(PrefsHelper.PREF_AUTOMAP_OPTIONS).setEnabled(enable);
 		        getPreferenceScreen().findPreference(PrefsHelper.PREF_DISABLE_RIGHT_STICK).setEnabled(enable);
@@ -376,134 +376,134 @@ public class UserPreferences extends PreferenceActivity implements OnSharedPrefe
 	        else if(key.equals(PrefsHelper.PREF_AUTOMAP_OPTIONS))
 	        {	
 	        	try{InputHandlerExt.resetAutodetected();}catch(Throwable e){};
-	        	mPrefAutomap.setSummary("Current value is '" + mPrefAutomap.getEntry()+"'"); 
+	        	mPrefAutomap.setSummary("已选择：" + mPrefAutomap.getEntry()); 
 	        }	        
 	        else if(key.equals(PrefsHelper.PREF_ANALOG_DZ))
 	        {	
-	        	mPrefAnalogDZ.setSummary("Current value is '" + mPrefAnalogDZ.getEntry()+"'"); 
+	        	mPrefAnalogDZ.setSummary("已选择：" + mPrefAnalogDZ.getEntry()); 
 	        }
 	        else if(key.equals(PrefsHelper.PREF_GAMEPAD_DZ))
 	        {	
-	        	mPrefGamepadDZ.setSummary("Current value is '" + mPrefGamepadDZ.getEntry()+"'"); 
+	        	mPrefGamepadDZ.setSummary("已选择：" + mPrefGamepadDZ.getEntry()); 
 	        }	        
 	        else if(key.equals(PrefsHelper.PREF_TILT_DZ))
 	        {	
-	        	mPrefTiltDZ.setSummary("Current value is '" + mPrefTiltDZ.getEntry()+"'"); 
+	        	mPrefTiltDZ.setSummary("已选择：" + mPrefTiltDZ.getEntry()); 
 	        }
 	        else if(key.equals(PrefsHelper.PREF_TILT_NEUTRAL))
 	        {	
-	        	mPrefTiltNeutral.setSummary("Current value is '" + mPrefTiltNeutral.getEntry()+"'"); 
+	        	mPrefTiltNeutral.setSummary("已选择：" + mPrefTiltNeutral.getEntry()); 
 	        }	        
 		    else if(key.equals(PrefsHelper.PREF_GLOBAL_FRAMESKIP))
 		    {	
-		    	mPrefFrameSkip.setSummary("Current value is '" + mPrefFrameSkip.getEntry()+"'"); 
+		    	mPrefFrameSkip.setSummary("已选择：" + mPrefFrameSkip.getEntry()); 
 		    }
 		    else if(key.equals(PrefsHelper.PREF_GLOBAL_SOUND))
 		    {	
-		    	mPrefSound.setSummary("Current value is '" + mPrefSound.getEntry()+"'"); 
+		    	mPrefSound.setSummary("已选择：" + mPrefSound.getEntry()); 
 	        }
 		    else if(key.equals(PrefsHelper.PREF_STICK_TYPE))
 		    {	
-		    	mPrefStickType.setSummary("Current value is '" + mPrefStickType.getEntry()+"'"); 
+		    	mPrefStickType.setSummary("已选择：" + mPrefStickType.getEntry()); 
 		    }
 		    else if(key.equals(PrefsHelper.PREF_NUMBUTTONS))
 		    {	
-		    	mPrefNumButtons.setSummary("Current value is '" + mPrefNumButtons.getEntry()+"'"); 
+		    	mPrefNumButtons.setSummary("已选择：" + mPrefNumButtons.getEntry()); 
 		    }
 		    else if(key.equals(PrefsHelper.PREF_BUTTONS_SIZE))
 		    {	
-		    	mPrefSizeButtons.setSummary("Current value is '" + mPrefSizeButtons.getEntry()+"'"); 
+		    	mPrefSizeButtons.setSummary("已选择：" + mPrefSizeButtons.getEntry()); 
 		    }
 		    else if(key.equals(PrefsHelper.PREF_STICK_SIZE))
 		    {	
-		    	mPrefSizeStick.setSummary("Current value is '" + mPrefSizeStick.getEntry()+"'"); 
+		    	mPrefSizeStick.setSummary("已选择：" + mPrefSizeStick.getEntry()); 
 		    }	        
 		    else if(key.equals(PrefsHelper.PREF_VIDEO_THREAD_PRIORITY))
 		    {	        
-	            mPrefVideoThPr.setSummary("Current value is '" + mPrefVideoThPr.getEntry()+"'");
+	            mPrefVideoThPr.setSummary("已选择：" + mPrefVideoThPr.getEntry());
 		    }
 			else if(key.equals(PrefsHelper.PREF_MAIN_THREAD_PRIORITY))
 			{    
-	            mPrefMainThPr.setSummary("Current value is '" + mPrefMainThPr.getEntry()+"'");
+	            mPrefMainThPr.setSummary("已选择：" + mPrefMainThPr.getEntry());
 			}
 		    else if(key.equals(PrefsHelper.PREF_SOUND_ENGINE))
 		    {
-	            mPrefSoundEngine.setSummary("Current value is '" + mPrefSoundEngine.getEntry()+"'");
+	            mPrefSoundEngine.setSummary("已选择：" + mPrefSoundEngine.getEntry());
 		    }    
 		    else if(key.equals(PrefsHelper.PREF_AUTOFIRE))
 		    {
-		    	mPrefAutofire.setSummary("Current value is '" + mPrefAutofire.getEntry()+"'");
+		    	mPrefAutofire.setSummary("已选择：" + mPrefAutofire.getEntry());
 		    }  	
 		    else if(key.equals(PrefsHelper.PREF_GLOBAL_VSYNC))
 		    {
-		    	mPrefVSync.setSummary("Current value is '" + mPrefVSync.getEntry()+"'");
+		    	mPrefVSync.setSummary("已选择：" + mPrefVSync.getEntry());
 		    } 	  
 		    else if(key.equals(PrefsHelper.PREF_FILTER_CATEGORY))
 		    {
-		    	mPrefFilterCat.setSummary("Current value is '" + mPrefFilterCat.getEntry()+"'");
+		    	mPrefFilterCat.setSummary("已选择：" + mPrefFilterCat.getEntry());
 		    }
 		    else if(key.equals(PrefsHelper.PREF_FILTER_DRVSRC))
 		    {
-		    	mPrefFilterDrvSrc.setSummary("Current value is '" + mPrefFilterDrvSrc.getEntry()+"'");
+		    	mPrefFilterDrvSrc.setSummary("已选择：" + mPrefFilterDrvSrc.getEntry());
 		    } 
 		    else if(key.equals(PrefsHelper.PREF_FILTER_MANUF))
 		    {
-		    	mPrefFilterManuf.setSummary("Current value is '" + mPrefFilterManuf.getEntry()+"'");
+		    	mPrefFilterManuf.setSummary("已选择：" + mPrefFilterManuf.getEntry());
 		    } 	 
 		    else if(key.equals(PrefsHelper.PREF_FILTER_YGTE))
 		    {
-		    	mPrefFilterYGTE.setSummary("Current value is '" + mPrefFilterYGTE.getEntry()+"'");
+		    	mPrefFilterYGTE.setSummary("已选择：" + mPrefFilterYGTE.getEntry());
 		    } 
 		    else if(key.equals(PrefsHelper.PREF_FILTER_YLTE))
 		    {
-		    	mPrefFilterYLTE.setSummary("Current value is '" + mPrefFilterYLTE.getEntry()+"'");
+		    	mPrefFilterYLTE.setSummary("已选择：" + mPrefFilterYLTE.getEntry());
 		    } 
 		    else if(key.equals(PrefsHelper.PREF_FILTER_KEYWORD))
 		    {
-		    	mPrefFilterkeyword.setSummary("Current value is '" + mPrefFilterkeyword.getText()+"'");
+		    	mPrefFilterkeyword.setSummary("已选择：" + mPrefFilterkeyword.getText());
 		    } 	
 	        /*
 		    else if(key.equals(PrefsHelper.PREF_OVERLAY_INTENSITY))
 		    {
-		    	mPrefOverlayInt.setSummary("Current value is '" + mPrefOverlayInt.getEntry()+"'");
+		    	mPrefOverlayInt.setSummary("已选择：" + mPrefOverlayInt.getEntry());
 		    	Emulator.setOverlayFilterValue(PrefsHelper.PREF_OVERLAY_NONE);//forces reload
 		    } 
 		    */	  
 		    else if(key.equals(PrefsHelper.PREF_GLOBAL_FORCE_PXASPECT))
 		    {
-		    	mPrefForcPX.setSummary("Current value is '" + mPrefForcPX.getEntry()+"'");
+		    	mPrefForcPX.setSummary("已选择：" + mPrefForcPX.getEntry());
 		    }
 		    else if(key.equals(PrefsHelper.PREF_NETPLAY_PORT))
 		    {
-		    	mPrefNetplayPort.setSummary("Current value is '" + mPrefNetplayPort.getText()+"'");
+		    	mPrefNetplayPort.setSummary("已选择：" + mPrefNetplayPort.getText());
 		    } 	        
 		    else if(key.equals(PrefsHelper.PREF_NETPLAY_DELAY))
 		    {
-		    	mPrefNetplayDelay.setSummary("Current value is '" + mPrefNetplayDelay.getEntry()+"'");
+		    	mPrefNetplayDelay.setSummary("已选择：" + mPrefNetplayDelay.getEntry());
 		    } 	  
 		    else if(key.equals(PrefsHelper.PREF_GLOBAL_NAVBAR_MODE))
 		    {
-		    	mPrefNavbar.setSummary("Current value is '" + mPrefNavbar.getEntry()+"'");
+		    	mPrefNavbar.setSummary("已选择：" + mPrefNavbar.getEntry());
 		    } 	        
 		    else if(key.equals(PrefsHelper.PREF_GLOBAL_IMAGE_EFFECT))
 		    {
-		    	mPrefImageEffect.setSummary("Current value is '" + mPrefImageEffect.getEntry()+"'");
+		    	mPrefImageEffect.setSummary("已选择：" + mPrefImageEffect.getEntry());
 		    } 
 		    else if(key.equals(PrefsHelper.PREF_INSTALLATION_DIR))
 		    {
-		    	mPrefInstPath.setSummary("Current value is '" + mPrefInstPath.getText()+"'");
+		    	mPrefInstPath.setSummary("已选择：" + mPrefInstPath.getText());
 		    }
 		    else if(key.equals(PrefsHelper.PREF_LIGHTGUN))
 		    {
-		    	mPrefLightgun.setSummary("Current value is '" + mPrefLightgun.getEntry()+"'");
+		    	mPrefLightgun.setSummary("已选择：" + mPrefLightgun.getEntry());
 		    }
 		    else if(key.equals(PrefsHelper.PREF_BIOS))
 		    {
-		    	mPrefBios.setSummary("Current value is '" + mPrefBios.getEntry()+"'");
+		    	mPrefBios.setSummary("已选择：" + mPrefBios.getEntry());
 		    }
 		    else if(key.equals(PrefsHelper.PREF_GLOBAL_REFRESH))
 		    {
-		    	mPrefRefresh.setSummary("Current value is '" + mPrefRefresh.getText()+"'");
+		    	mPrefRefresh.setSummary("已选择：" + mPrefRefresh.getText());
 		    } 	        
 	    }
 
@@ -516,9 +516,9 @@ public class UserPreferences extends PreferenceActivity implements OnSharedPrefe
 			}
 			else if (pref.getKey().equals("changeRomPath")) {
 				 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-			    	builder.setMessage("Are you sure? (app restart needed)")
+			    	builder.setMessage("确认操作？（需要重启程序）")
 		    	       .setCancelable(false)
-		    	       .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+		    	       .setPositiveButton("确定", new DialogInterface.OnClickListener() {
 		    	           public void onClick(DialogInterface dialog, int id) {
 		    					SharedPreferences.Editor editor =  settings.edit();
 		    					editor.putString(PrefsHelper.PREF_ROMsDIR, null);
@@ -527,7 +527,7 @@ public class UserPreferences extends PreferenceActivity implements OnSharedPrefe
 		    	                //android.os.Process.killProcess(android.os.Process.myPid());  
 		    	           }
 		    	       })
-		    	       .setNegativeButton("No", new DialogInterface.OnClickListener() {
+		    	       .setNegativeButton("取消", new DialogInterface.OnClickListener() {
 		    	           public void onClick(DialogInterface dialog, int id) {
 		    	                dialog.cancel();
 		    	           }
@@ -538,9 +538,9 @@ public class UserPreferences extends PreferenceActivity implements OnSharedPrefe
 			else if (pref.getKey().equals("defaultsKeys")) {
 
 				 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-			    	builder.setMessage("Are you sure to restore?")
+			    	builder.setMessage("确定要还原？")
 		    	       .setCancelable(false)
-		    	       .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+		    	       .setPositiveButton("确定", new DialogInterface.OnClickListener() {
 		    	           public void onClick(DialogInterface dialog, int id) {
 		    					SharedPreferences.Editor editor =  settings.edit();
 		    					
@@ -557,7 +557,7 @@ public class UserPreferences extends PreferenceActivity implements OnSharedPrefe
 		    				
 		    	           }
 		    	       })
-		    	       .setNegativeButton("No", new DialogInterface.OnClickListener() {
+		    	       .setNegativeButton("取消", new DialogInterface.OnClickListener() {
 		    	           public void onClick(DialogInterface dialog, int id) {
 		    	                dialog.cancel();
 		    	           }
@@ -572,9 +572,9 @@ public class UserPreferences extends PreferenceActivity implements OnSharedPrefe
 			else if (pref.getKey().equals("defaultControlLayout")) {
 
 				 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-			    	builder.setMessage("Are you sure to restore?")
+			    	builder.setMessage("确定要还原？")
 		    	       .setCancelable(false)
-		    	       .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+		    	       .setPositiveButton("确定", new DialogInterface.OnClickListener() {
 		    	           public void onClick(DialogInterface dialog, int id) {
 		    					SharedPreferences.Editor editor =  settings.edit();
 		    					editor.putString(PrefsHelper.PREF_DEFINED_CONTROL_LAYOUT, null);
@@ -582,7 +582,7 @@ public class UserPreferences extends PreferenceActivity implements OnSharedPrefe
 		    					editor.commit();
 		    	           }
 		    	       })
-		    	       .setNegativeButton("No", new DialogInterface.OnClickListener() {
+		    	       .setNegativeButton("取消", new DialogInterface.OnClickListener() {
 		    	           public void onClick(DialogInterface dialog, int id) {
 		    	                dialog.cancel();
 		    	           }
@@ -593,9 +593,9 @@ public class UserPreferences extends PreferenceActivity implements OnSharedPrefe
 			else if (pref.getKey().equals("restoreFilters")) {
 
 				 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-			    	builder.setMessage("Are you sure to restore?")
+			    	builder.setMessage("确定要还原？")
 		    	       .setCancelable(false)
-		    	       .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+		    	       .setPositiveButton("确定", new DialogInterface.OnClickListener() {
 		    	           public void onClick(DialogInterface dialog, int id) {
 		    	        	SharedPreferences.Editor editor =  settings.edit();
 		    	       		editor.putBoolean(PrefsHelper.PREF_FILTER_FAVORITES, false);
@@ -612,7 +612,7 @@ public class UserPreferences extends PreferenceActivity implements OnSharedPrefe
 		    	    		startActivity(getIntent());
 		    	           }
 		    	       })
-		    	       .setNegativeButton("No", new DialogInterface.OnClickListener() {
+		    	       .setNegativeButton("取消", new DialogInterface.OnClickListener() {
 		    	           public void onClick(DialogInterface dialog, int id) {
 		    	                dialog.cancel();
 		    	           }
@@ -623,9 +623,9 @@ public class UserPreferences extends PreferenceActivity implements OnSharedPrefe
 			else if (pref.getKey().equals("defaultData")) {
 
 				 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-			    	builder.setMessage("Are you sure to restore? This will remove all your MAME cfg and nvram files. This is useful to restore games to defaults to fixup mame key mappings or netplay problems.")
+			    	builder.setMessage("确定要还原？ 这将删除所有 MAME cfg 和 nvram 文件。这对于将游戏恢复到默认值以修复 mame 键映射或网络游戏问题很有用。")
 		    	       .setCancelable(false)
-		    	       .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+		    	       .setPositiveButton("确定", new DialogInterface.OnClickListener() {
 		    	           public void onClick(DialogInterface dialog, int id) {
 		    	        	SharedPreferences.Editor editor =  settings.edit();
 		    	       		editor.putBoolean(PrefsHelper.PREF_MAME_DEFAULTS, true);		
@@ -633,7 +633,7 @@ public class UserPreferences extends PreferenceActivity implements OnSharedPrefe
 		    	    		Emulator.setNeedRestart(true);
 		    	           }
 		    	       })
-		    	       .setNegativeButton("No", new DialogInterface.OnClickListener() {
+		    	       .setNegativeButton("取消", new DialogInterface.OnClickListener() {
 		    	           public void onClick(DialogInterface dialog, int id) {
 		    	                dialog.cancel();
 		    	           }

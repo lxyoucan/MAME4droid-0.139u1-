@@ -44,19 +44,6 @@
 
 package com.seleuco.mame4droid.helpers;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipInputStream;
-
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -90,6 +77,19 @@ import com.seleuco.mame4droid.prefs.GameFilterPrefs;
 import com.seleuco.mame4droid.prefs.UserPreferences;
 import com.seleuco.mame4droid.views.IEmuView;
 import com.seleuco.mame4droid.views.InputView;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
 
 public class MainHelper {
 
@@ -324,11 +324,11 @@ public class MainHelper {
 					.getPrefsHelper().getROMsDIR() : dir + "roms";
 			mm.getDialogHelper()
 					.setInfoMsg(
-							"Created or updated: '"
+							"已创建或更改：'"
 									+ dir
-									+ "' to store save states, cfg files and MAME assets.\n\nBeware, copy or move your zipped ROMs under '"
+									+ "' 来存储保存状态、cfg 配置文件和 MAME 资源.\n\n注意，复制或移动压缩的 ROM 文件到 '"
 									+ rompath
-									+ "' directory!\n\nMAME4droid 0.139 uses only 0.139 MAME romset.");
+									+ "' 目录！\n\nMAME4droid 0.139 仅使用 0.139 MAME romset.");
 			mm.showDialog(DialogHelper.DIALOG_INFO);
 
 		} catch (Exception e) {
